@@ -6,7 +6,7 @@ package receipt
 import (
 	bytes "bytes"
 	fmt "fmt"
-	github_com_kalyan3104_drt_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
+	github_com_kalyan3104_k_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	io "io"
@@ -143,7 +143,7 @@ func (this *Receipt) Equal(that interface{}) bool {
 		return false
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		if !__caster.Equal(this.Value, that1.Value) {
 			return false
 		}
@@ -222,7 +222,7 @@ func (m *Receipt) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x12
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		size := __caster.Size(m.Value)
 		i -= size
 		if _, err := __caster.MarshalTo(m.Value, dAtA[i:]); err != nil {
@@ -253,7 +253,7 @@ func (m *Receipt) Size() (n int) {
 	var l int
 	_ = l
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		l = __caster.Size(m.Value)
 		n += 1 + l + sovReceipt(uint64(l))
 	}
@@ -358,7 +358,7 @@ func (m *Receipt) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			{
-				__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+				__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 				if tmp, err := __caster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 					return err
 				} else {

@@ -6,8 +6,8 @@ package smartContractResult
 import (
 	bytes "bytes"
 	fmt "fmt"
-	github_com_kalyan3104_drt_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
-	github_com_kalyan3104_drt_chain_core_go_data_vm "github.com/kalyan3104/k-chain-core-go/data/vm"
+	github_com_kalyan3104_k_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
+	github_com_kalyan3104_k_chain_core_go_data_vm "github.com/kalyan3104/k-chain-core-go/data/vm"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	io "io"
@@ -42,7 +42,7 @@ type SmartContractResult struct {
 	OriginalTxHash []byte                                                    `protobuf:"bytes,10,opt,name=OriginalTxHash,proto3" json:"originalTxHash"`
 	GasLimit       uint64                                                    `protobuf:"varint,11,opt,name=GasLimit,proto3" json:"gasLimit"`
 	GasPrice       uint64                                                    `protobuf:"varint,12,opt,name=GasPrice,proto3" json:"gasPrice"`
-	CallType       github_com_kalyan3104_drt_chain_core_go_data_vm.CallType `protobuf:"varint,13,opt,name=CallType,proto3,casttype=github.com/kalyan3104/k-chain-core-go/data/vm.CallType" json:"callType"`
+	CallType       github_com_kalyan3104_k_chain_core_go_data_vm.CallType `protobuf:"varint,13,opt,name=CallType,proto3,casttype=github.com/kalyan3104/k-chain-core-go/data/vm.CallType" json:"callType"`
 	CodeMetadata   []byte                                                    `protobuf:"bytes,14,opt,name=CodeMetadata,proto3" json:"codeMetadata,omitempty"`
 	ReturnMessage  []byte                                                    `protobuf:"bytes,15,opt,name=ReturnMessage,proto3" json:"returnMessage,omitempty"`
 	OriginalSender []byte                                                    `protobuf:"bytes,16,opt,name=OriginalSender,proto3" json:"originalSender,omitempty"`
@@ -160,7 +160,7 @@ func (m *SmartContractResult) GetGasPrice() uint64 {
 	return 0
 }
 
-func (m *SmartContractResult) GetCallType() github_com_kalyan3104_drt_chain_core_go_data_vm.CallType {
+func (m *SmartContractResult) GetCallType() github_com_kalyan3104_k_chain_core_go_data_vm.CallType {
 	if m != nil {
 		return m.CallType
 	}
@@ -260,7 +260,7 @@ func (this *SmartContractResult) Equal(that interface{}) bool {
 		return false
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		if !__caster.Equal(this.Value, that1.Value) {
 			return false
 		}
@@ -275,7 +275,7 @@ func (this *SmartContractResult) Equal(that interface{}) bool {
 		return false
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		if !__caster.Equal(this.RelayedValue, that1.RelayedValue) {
 			return false
 		}
@@ -432,7 +432,7 @@ func (m *SmartContractResult) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x3a
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		size := __caster.Size(m.RelayedValue)
 		i -= size
 		if _, err := __caster.MarshalTo(m.RelayedValue, dAtA[i:]); err != nil {
@@ -464,7 +464,7 @@ func (m *SmartContractResult) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x1a
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		size := __caster.Size(m.Value)
 		i -= size
 		if _, err := __caster.MarshalTo(m.Value, dAtA[i:]); err != nil {
@@ -503,7 +503,7 @@ func (m *SmartContractResult) Size() (n int) {
 		n += 1 + sovSmartContractResult(uint64(m.Nonce))
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		l = __caster.Size(m.Value)
 		n += 1 + l + sovSmartContractResult(uint64(l))
 	}
@@ -520,7 +520,7 @@ func (m *SmartContractResult) Size() (n int) {
 		n += 1 + l + sovSmartContractResult(uint64(l))
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		l = __caster.Size(m.RelayedValue)
 		n += 1 + l + sovSmartContractResult(uint64(l))
 	}
@@ -681,7 +681,7 @@ func (m *SmartContractResult) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			{
-				__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+				__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 				if tmp, err := __caster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 					return err
 				} else {
@@ -821,7 +821,7 @@ func (m *SmartContractResult) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			{
-				__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+				__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 				if tmp, err := __caster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 					return err
 				} else {
@@ -1017,7 +1017,7 @@ func (m *SmartContractResult) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.CallType |= github_com_kalyan3104_drt_chain_core_go_data_vm.CallType(b&0x7F) << shift
+				m.CallType |= github_com_kalyan3104_k_chain_core_go_data_vm.CallType(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}

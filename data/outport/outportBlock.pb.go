@@ -7,7 +7,7 @@ import (
 	bytes "bytes"
 	encoding_binary "encoding/binary"
 	fmt "fmt"
-	github_com_kalyan3104_drt_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
+	github_com_kalyan3104_k_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
 	alteredAccount "github.com/kalyan3104/k-chain-core-go/data/alteredAccount"
 	block "github.com/kalyan3104/k-chain-core-go/data/block"
 	receipt "github.com/kalyan3104/k-chain-core-go/data/receipt"
@@ -1480,13 +1480,13 @@ func (this *FeeInfo) Equal(that interface{}) bool {
 		return false
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		if !__caster.Equal(this.Fee, that1.Fee) {
 			return false
 		}
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		if !__caster.Equal(this.InitialPaidFee, that1.InitialPaidFee) {
 			return false
 		}
@@ -2731,7 +2731,7 @@ func (m *FeeInfo) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		size := __caster.Size(m.InitialPaidFee)
 		i -= size
 		if _, err := __caster.MarshalTo(m.InitialPaidFee, dAtA[i:]); err != nil {
@@ -2742,7 +2742,7 @@ func (m *FeeInfo) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		size := __caster.Size(m.Fee)
 		i -= size
 		if _, err := __caster.MarshalTo(m.Fee, dAtA[i:]); err != nil {
@@ -3613,12 +3613,12 @@ func (m *FeeInfo) Size() (n int) {
 		n += 1 + sovOutportBlock(uint64(m.GasUsed))
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		l = __caster.Size(m.Fee)
 		n += 1 + l + sovOutportBlock(uint64(l))
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		l = __caster.Size(m.InitialPaidFee)
 		n += 1 + l + sovOutportBlock(uint64(l))
 	}
@@ -5849,7 +5849,7 @@ func (m *FeeInfo) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			{
-				__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+				__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 				if tmp, err := __caster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 					return err
 				} else {
@@ -5887,7 +5887,7 @@ func (m *FeeInfo) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			{
-				__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+				__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 				if tmp, err := __caster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 					return err
 				} else {

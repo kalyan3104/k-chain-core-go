@@ -6,7 +6,7 @@ package dcdt
 import (
 	bytes "bytes"
 	fmt "fmt"
-	github_com_kalyan3104_drt_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
+	github_com_kalyan3104_k_chain_core_go_data "github.com/kalyan3104/k-chain-core-go/data"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	io "io"
@@ -28,7 +28,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-// DCDigitalToken holds the data for a Dharitri Core Token transaction
+// DCDigitalToken holds the data for a kalyan Core Token transaction
 type DCDigitalToken struct {
 	Type          uint32        `protobuf:"varint,1,opt,name=Type,proto3" json:"Type"`
 	Value         *math_big.Int `protobuf:"bytes,2,opt,name=Value,proto3,casttypewith=math/big.Int;github.com/kalyan3104/k-chain-core-go/data.BigIntCaster" json:"Value"`
@@ -296,7 +296,7 @@ func (this *DCDigitalToken) Equal(that interface{}) bool {
 		return false
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		if !__caster.Equal(this.Value, that1.Value) {
 			return false
 		}
@@ -485,7 +485,7 @@ func (m *DCDigitalToken) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x1a
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		size := __caster.Size(m.Value)
 		i -= size
 		if _, err := __caster.MarshalTo(m.Value, dAtA[i:]); err != nil {
@@ -626,7 +626,7 @@ func (m *DCDigitalToken) Size() (n int) {
 		n += 1 + sovDcdt(uint64(m.Type))
 	}
 	{
-		__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+		__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 		l = __caster.Size(m.Value)
 		n += 1 + l + sovDcdt(uint64(l))
 	}
@@ -829,7 +829,7 @@ func (m *DCDigitalToken) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			{
-				__caster := &github_com_kalyan3104_drt_chain_core_go_data.BigIntCaster{}
+				__caster := &github_com_kalyan3104_k_chain_core_go_data.BigIntCaster{}
 				if tmp, err := __caster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 					return err
 				} else {
